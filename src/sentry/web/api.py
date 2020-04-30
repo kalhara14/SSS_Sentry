@@ -422,8 +422,9 @@ class APIView(BaseView):
         except Exception as e:
             # TODO(dcramer): test failures are not outputting the log message
             # here
+            #content is change to show generic error message
             if settings.DEBUG:
-                content = traceback.format_exc()
+                content = "An internal error has occurred"
             else:
                 content = ""
             logger.exception(e)
