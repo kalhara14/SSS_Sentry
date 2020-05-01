@@ -134,5 +134,5 @@ def safe_socket_connect(address, timeout=30, ssl=False):
     """
     sock = safe_create_connection(address, timeout)
     if ssl:
-        sock = wrap_socket(sock)
+        sock = wrap_socket(sock,ssl_version=PROTOCOL_TLSv1_1)
     return sock
